@@ -8,5 +8,6 @@ wheels/
 .vscode/
 models/
 alpamayo1.5/
+alpamayo15-linux-amd64-uv-20260919/*.*
 # Virtual environments
 .venv
