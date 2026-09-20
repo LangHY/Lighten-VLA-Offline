@@ -30,7 +30,7 @@ DATASET_CACHE_NAME = "datasets--nvidia--PhysicalAI-Autonomous-Vehicles"
 MODEL_FILES = {
     "config.json": (
         3058,
-        "824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e",
+        "824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e",
     ),
     "model.safetensors.index.json": (
         104778,

@@ -46,3 +46,9 @@ bash scripts/verify_alpamayo15_offline_bundle.sh --bundle-root /transfer/alpamay
 当前默认使用已冻结的 Hugging Face 模型与数据集来源；模型 ModelScope 传输源的受限规则见 [ALP15-OFFLINE-ASSET-001.md](ALP15-OFFLINE-ASSET-001.md)。不要向任何脚本参数传入 token。
 
 已拉取冻结官方仓库后，独立离线兼容入口的差异、资产缺口与 L20 预检/运行口径见 [ALP15-OFFLINE-INFER-001.md](ALP15-OFFLINE-INFER-001.md)。它不修改或替代 NVIDIA 官方原始入口。
+
+Cosmos 九个非权重配置的 ModelScope 传输、冻结 Hugging Face blob 等价性校验与来源清单见 [ALP15-COSMOS-CONFIG-001.md](ALP15-COSMOS-CONFIG-001.md)。
+
+Cosmos/Qwen 干净配置目录、上传归档、校验与中间文件清理记录见 [ALP15-CONFIG-DELIVERY-001.md](ALP15-CONFIG-DELIVERY-001.md)。
+
+五份 L20 上传归档、成员边界、SHA-256 和最终打包验收记录见 [ALP15-UPLOAD-ARCHIVES-001.md](ALP15-UPLOAD-ARCHIVES-001.md)。

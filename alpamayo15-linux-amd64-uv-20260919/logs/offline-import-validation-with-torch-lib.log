@@ -1,0 +1,9 @@
+LD_LIBRARY_PATH=/offline/verify-venv/lib/python3.12/site-packages/torch/lib:/usr/local/cuda/lib64
+flash_extension=/offline/verify-venv/lib/python3.12/site-packages/flash_attn_2_cuda.cpython-312-x86_64-linux-gnu.so
+ldd_missing=none
+torch_import=PASS 2.8.0+cu128 12.8
+flash_attn_import=PASS 2.8.3
+alpamayo_import=PASS Alpamayo1_5
+Would use project environment at: /offline/verify-venv
+Checked 107 packages in 37ms
+Would make no changes

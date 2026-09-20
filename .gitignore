@@ -7,5 +7,6 @@ wheels/
 *.egg-info
 .vscode/
 models/
+alpamayo1.5/
 # Virtual environments
 .venv

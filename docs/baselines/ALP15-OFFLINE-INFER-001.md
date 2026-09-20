@@ -5,7 +5,7 @@
 - 日期：2026-09-17；决策者与执行者：GPT-5.6 Sol high。
 - 当前里程碑：NVIDIA 官方原始 Alpamayo 1.5 测试与可复现基线。
 - 风险：高。只允许新增仓库顶层的独立离线兼容入口及测试，不修改已冻结的 NVIDIA 官方源码、checkpoint、数据集或模型结构。
-- 输入：官方源码提交 `36aeb4c5938cbc2eb2aed33b22434773da4ab639`；官方 `src/alpamayo1_5/test_inference.py` SHA256 `dc69646feed09f92defa00a19ae6f2fc2a37a10a70ec35678f87946fbe6fe8e8`；Alpamayo checkpoint 的冻结 `config.json` SHA256 `824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e`；数据集 revision `33f9bf447ed3bcb7d545ce13f4226f824214fafb`，`physical_ai_av==0.2.0`。
+- 输入：官方源码提交 `36aeb4c5938cbc2eb2aed33b22434773da4ab639`；官方 `src/alpamayo1_5/test_inference.py` SHA256 `dc69646feed09f92defa00a19ae6f2fc2a37a10a70ec35678f87946fbe6fe8e8`；Alpamayo checkpoint 的冻结 `config.json` SHA256 `824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e`；数据集 revision `33f9bf447ed3bcb7d545ce13f4226f824214fafb`，`physical_ai_av==0.2.0`。
 
 离线兼容入口保留官方样例的 clip、时间戳、四路相机、处理器调用、采样参数与 minADE 计算口径。仅作下列运行时适配：
 

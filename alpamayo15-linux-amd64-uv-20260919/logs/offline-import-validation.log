@@ -1,0 +1,23 @@
+arch=x86_64
+os=Ubuntu 22.04.5 LTS
+cuda_image=12.8.1
+Build cuda_12.8.r12.8/compiler.35583870_0
+lrwxr-xr-x 1 root root 66 Sep 19 13:24 /offline/verify-venv/bin/python -> /offline/uv-python/cpython-3.12.14-linux-x86_64-gnu/bin/python3.12
+/offline/uv-python/cpython-3.12.14-linux-x86_64-gnu/bin/python3.12
+torch=2.8.0
+torchvision=0.23.0
+transformers=4.57.1
+physical-ai-av=0.2.0
+flash-attn=2.8.3
+accelerate=1.12.0
+torch_build=2.8.0+cu128
+torch_cuda=12.8
+cuda_available=False
+flash_attn_import=2.8.3
+alpamayo_class=Alpamayo1_5
+flash_extension=/offline/verify-venv/lib/python3.12/site-packages/flash_attn_2_cuda.cpython-312-x86_64-linux-gnu.so
+	libc10.so => not found
+	libtorch_cpu.so => not found
+	libtorch_python.so => not found
+	libc10_cuda.so => not found
+	libtorch_cuda.so => not found

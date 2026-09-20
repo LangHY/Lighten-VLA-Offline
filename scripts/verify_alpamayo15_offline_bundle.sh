@@ -9,7 +9,7 @@ readonly MODEL_REPO="nvidia/Alpamayo-1.5-10B"
 readonly MODEL_REV="7aba8293c09993f2e125c6819df05d7fa3e873ea"
 readonly MODELSCOPE_MODEL_REPO="nv-community/Alpamayo-1.5-10B"
 readonly MODELSCOPE_MODEL_REV="d26524f2d3bd005149d7f23e2af7c3ea10123df3"
-readonly MODEL_CONFIG_SHA256="824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e"
+readonly MODEL_CONFIG_SHA256="824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e"
 readonly MODEL_CONFIG_SIZE="3058"
 readonly MODEL_INDEX_SHA256="b899e51816e15a96edc7cd57a01cd36c5e39fe1bcbf1537c4ac914f0cad43a0d"
 readonly MODEL_INDEX_SIZE="104778"
@@ -144,7 +144,7 @@ if [[ "$model_transport" == "modelscope" ]]; then
   declare -a MODELSCOPE_CORE_FILES=(
     "LICENSE:2ab44b68365473c112f5092211a38f231cb23e50de68b75a13369adbd76a74df:0"
     "README.md:ab3a10f3abd36624b55d3f511ca6ac957a2a18a922ca6a27c4b0844b5f925240:0"
-    "config.json:824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e:3058"
+    "config.json:824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e:3058"
     "model.safetensors.index.json:b899e51816e15a96edc7cd57a01cd36c5e39fe1bcbf1537c4ac914f0cad43a0d:104778"
   )
   for item in "${MODELSCOPE_CORE_FILES[@]}"; do

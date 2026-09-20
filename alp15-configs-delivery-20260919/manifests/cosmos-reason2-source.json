@@ -1,0 +1,68 @@
+{
+  "files": [
+    {
+      "git_blob_sha1": "1081bacf1af7c7c6de4a585ce02cd0fd34e382da",
+      "path": "chat_template.json",
+      "sha256": "5c72a170d2a4a1a3bc5adad2e689ae28138a9700e5b8c96c0266331e86c0acce",
+      "size": 5499
+    },
+    {
+      "git_blob_sha1": "0e2df614c5fe1ad2b6b540c8625bebf2d7ec43ca",
+      "path": "config.json",
+      "sha256": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+      "size": 1474
+    },
+    {
+      "git_blob_sha1": "e116347d7ef42621c7a5957f82c015c38d939c1f",
+      "path": "generation_config.json",
+      "sha256": "8469742d1fce0de951c8909b26a2c0c0d8490837ce476efb114da9e0cefc4d44",
+      "size": 269
+    },
+    {
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "path": "merges.txt",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "size": 1671839
+    },
+    {
+      "git_blob_sha1": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+      "path": "preprocessor_config.json",
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "size": 390
+    },
+    {
+      "git_blob_sha1": "c6cc1014128b19d1fc46b1d30a23e3b1d35db421",
+      "path": "tokenizer.json",
+      "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+      "size": 7032403
+    },
+    {
+      "git_blob_sha1": "d3d3763207692c78780f4bf42d4dadf49a5c8012",
+      "path": "tokenizer_config.json",
+      "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+      "size": 10868
+    },
+    {
+      "git_blob_sha1": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe",
+      "path": "video_preprocessor_config.json",
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "size": 385
+    },
+    {
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "path": "vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "size": 2776833
+    }
+  ],
+  "repo": "nvidia/Cosmos-Reason2-8B",
+  "revision": "a9fae2cf89dc64db96b12860417f0eb403013bb9",
+  "transport": {
+    "repo": "modelscope:nv-community/Cosmos-Reason2-8B",
+    "revision": "master"
+  },
+  "verification": {
+    "checked_at": "2026-09-19T22:02:40+08:00",
+    "method": "size and Git blob SHA-1 matched against the frozen Hugging Face revision"
+  }
+}

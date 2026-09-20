@@ -9,7 +9,7 @@ readonly MODEL_REPO="nvidia/Alpamayo-1.5-10B"
 readonly MODEL_REV="7aba8293c09993f2e125c6819df05d7fa3e873ea"
 readonly MODELSCOPE_MODEL_REPO="nv-community/Alpamayo-1.5-10B"
 readonly MODELSCOPE_MODEL_REV="d26524f2d3bd005149d7f23e2af7c3ea10123df3"
-readonly MODEL_CONFIG_SHA256="824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e"
+readonly MODEL_CONFIG_SHA256="824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e"
 readonly MODEL_CONFIG_SIZE="3058"
 readonly MODEL_INDEX_SHA256="b899e51816e15a96edc7cd57a01cd36c5e39fe1bcbf1537c4ac914f0cad43a0d"
 readonly MODEL_INDEX_SIZE="104778"
@@ -295,7 +295,7 @@ shards = {
     'model-00005-of-00005.safetensors': (2349614196, '9d889c09634e5a21b4c957957ede2cdab4418c268ee1d870c1f942d04242adf6'),
 }
 fixed = {
-    'config.json': (3058, '824fc3552466aaecb67c896a4536671e15c5687adbb416ce42a6bda3de1e68e'),
+    'config.json': (3058, '824fc3552466aaecb67c896a453667e1e15c5687adbb416ce42a6bda3de1e68e'),
     'model.safetensors.index.json': (104778, 'b899e51816e15a96edc7cd57a01cd36c5e39fe1bcbf1537c4ac914f0cad43a0d'),
 }
 if source_kind == 'modelscope':
