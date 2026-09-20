@@ -6,8 +6,30 @@ dist/
 wheels/
 *.egg-info
 .vscode/
+
+# OS/editor noise
+.DS_Store
+
+# Local model source, checkpoints and offline runtime assets
 models/
 alpamayo1.5/
-alpamayo15-linux-amd64-uv-20260919/*.*
+alpamayo15-linux-amd64-uv-*/
+alp15-test-clip-delivery-*/
+alpamayo15-source-runner-*/
+
+# Generated model/deployment binaries
+*.safetensors
+*.onnx
+*.engine
+*.pt
+*.pth
+
+# Transfer archives and runtime logs
+*.tar.zst
+*.tar.zst.sha256
+alpamayo15-upload-manifest-*.sha256
+logs/
+alp15_l20_audit_*/
+
 # Virtual environments
-.venv
+.venv/

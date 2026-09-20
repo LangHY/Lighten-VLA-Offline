@@ -1,0 +1,591 @@
+{
+  "asset_verification_ms": 21031.347209,
+  "benchmark_name": "Alpamayo-1.5-10B offline compatibility L20 baseline",
+  "benchmark_parameters": {
+    "chunk_id": 3119,
+    "clip_id": "030c760c-ae38-49aa-9ad8-f5650a545d26",
+    "dtype": "torch.bfloat16",
+    "max_generation_length": 256,
+    "measured_runs": 5,
+    "num_traj_samples": 1,
+    "seed": 42,
+    "t0_us": 5100000,
+    "temperature": 0.6,
+    "top_p": 0.98,
+    "warmup_runs": 1
+  },
+  "cold_inference": {
+    "baseline_allocated_mib": 21209.61865234375,
+    "baseline_reserved_mib": 21444.0,
+    "cuda_event_ms": 2384.590087890625,
+    "device_memory_after": {
+      "free_mib": 22536.75,
+      "total_mib": 45457.5625,
+      "used_mib": 22920.8125
+    },
+    "device_memory_before": {
+      "free_mib": 23696.75,
+      "total_mib": 45457.5625,
+      "used_mib": 21760.8125
+    },
+    "incremental_peak_allocated_mib": 915.58349609375,
+    "incremental_peak_reserved_mib": 1058.0,
+    "output": {
+      "cot": [
+        [
+          "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+        ]
+      ],
+      "minADE_m": 0.371870219707489,
+      "pred_rot_shape": [
+        1,
+        1,
+        1,
+        64,
+        3,
+        3
+      ],
+      "pred_xyz_shape": [
+        1,
+        1,
+        1,
+        64,
+        3
+      ]
+    },
+    "peak_allocated_mib": 22125.2021484375,
+    "peak_reserved_mib": 22502.0,
+    "process_peak_rss_mib": 6242.625,
+    "wall_ms": 2384.640862
+  },
+  "command": [
+    "scripts/benchmark_alpamayo15_offline.py",
+    "--source-dir",
+    "/home/tuqiang/lang/Lighten_VLA/alpamayo1.5",
+    "--model-dir",
+    "/home/tuqiang/lang/Lighten_VLA/models",
+    "--dataset-dir",
+    "/home/tuqiang/lang/Lighten_VLA/alp15-test-clip-delivery-20260917",
+    "--cosmos-config-dir",
+    "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/dependencies/configs/Cosmos-Reason2-8B",
+    "--qwen-config-dir",
+    "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/dependencies/configs/Qwen3-VL-2B-Instruct",
+    "--config-manifest-dir",
+    "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/manifests",
+    "--warmup-runs",
+    "1",
+    "--runs",
+    "5"
+  ],
+  "environment": {
+    "bf16_supported": true,
+    "compute_capability": [
+      8,
+      9
+    ],
+    "cuda_initial_memory": {
+      "free_mib": 45140.75,
+      "total_mib": 45457.5625,
+      "used_mib": 316.8125
+    },
+    "flash_attn": "2.8.3",
+    "gpu": "NVIDIA L20",
+    "numpy": "2.3.5",
+    "nvidia_smi": {
+      "compute_capability": "8.9",
+      "driver_version": "580.95.05",
+      "memory_free_mib": "45433",
+      "memory_total_mib": "46068",
+      "name": "NVIDIA L20",
+      "power_limit_w": "350.00"
+    },
+    "physical_ai_av": "0.2.0",
+    "platform": "Linux-6.8.0-87-generic-x86_64-with-glibc2.35",
+    "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+    "torch": "2.8.0+cu128",
+    "torch_cuda_build": "12.8",
+    "transformers": "4.57.1"
+  },
+  "final": {
+    "device_memory": {
+      "free_mib": 22536.75,
+      "total_mib": 45457.5625,
+      "used_mib": 22920.8125
+    },
+    "process_peak_rss_mib": 6242.625,
+    "torch_memory": {
+      "allocated_mib": 21218.126953125,
+      "max_allocated_mib": 22126.1748046875,
+      "max_reserved_mib": 22502.0,
+      "reserved_mib": 22502.0
+    }
+  },
+  "finished_at_utc": "2026-09-20T02:19:43.747629+00:00",
+  "frozen_revisions": {
+    "cosmos_revision": "a9fae2cf89dc64db96b12860417f0eb403013bb9",
+    "dataset_revision": "33f9bf447ed3bcb7d545ce13f4226f824214fafb",
+    "model_vlm_name": "nvidia/Cosmos-Reason2-8B",
+    "qwen_revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+  },
+  "input": {
+    "camera_count": 4,
+    "image_frames_shape": [
+      4,
+      4,
+      3,
+      1080,
+      1920
+    ],
+    "input_ids_shape": [
+      1,
+      3086
+    ],
+    "input_token_count": 3086
+  },
+  "model": {
+    "action_in_proj": {
+      "dtype": "torch.bfloat16",
+      "parameter_storage_gib": 0.002513885498046875,
+      "parameters": 1349632,
+      "parameters_billions": 0.001349632,
+      "trainable_parameters": 1349632
+    },
+    "action_out_proj": {
+      "dtype": "torch.bfloat16",
+      "parameter_storage_gib": 7.633119821548462e-06,
+      "parameters": 4098,
+      "parameters_billions": 4.098e-06,
+      "trainable_parameters": 4098
+    },
+    "diffusion": {
+      "dtype": null,
+      "parameter_storage_gib": 0.0,
+      "parameters": 0,
+      "parameters_billions": 0.0,
+      "trainable_parameters": 0
+    },
+    "expert": {
+      "dtype": "torch.bfloat16",
+      "parameter_storage_gib": 4.245412826538086,
+      "parameters": 2279238656,
+      "parameters_billions": 2.279238656,
+      "trainable_parameters": 2279238656
+    },
+    "expert_attention_implementation": "sdpa",
+    "total": {
+      "dtype": "torch.bfloat16",
+      "parameter_storage_gib": 20.635363075882196,
+      "parameters": 11078526194,
+      "parameters_billions": 11.078526194,
+      "trainable_parameters": 11078526194
+    },
+    "vlm": {
+      "dtype": "torch.bfloat16",
+      "parameter_storage_gib": 16.387428730726242,
+      "parameters": 8797933808,
+      "parameters_billions": 8.797933808,
+      "trainable_parameters": 8797933808
+    },
+    "vlm_attention_implementation": "flash_attention_2"
+  },
+  "paths": {
+    "config_manifest_dir": "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/manifests",
+    "cosmos_config_dir": "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/dependencies/configs/Cosmos-Reason2-8B",
+    "dataset_dir": "/home/tuqiang/lang/Lighten_VLA/alp15-test-clip-delivery-20260917",
+    "model_dir": "/home/tuqiang/lang/Lighten_VLA/models",
+    "qwen_config_dir": "/home/tuqiang/lang/Lighten_VLA/alp15-configs-delivery-20260919/dependencies/configs/Qwen3-VL-2B-Instruct",
+    "source_dir": "/home/tuqiang/lang/Lighten_VLA/alpamayo1.5"
+  },
+  "phase_profile": {
+    "note": "该 run 在 VLM/diffusion 阶段边界显式 synchronize；用于阶段分解，不参与正式 steady-state latency 统计。",
+    "output": {
+      "cot": [
+        [
+          "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+        ]
+      ],
+      "minADE_m": 0.371870219707489,
+      "pred_rot_shape": [
+        1,
+        1,
+        1,
+        64,
+        3,
+        3
+      ],
+      "pred_xyz_shape": [
+        1,
+        1,
+        1,
+        64,
+        3
+      ]
+    },
+    "phases": {
+      "diffusion_sample": {
+        "cuda_event_ms": 252.7836151123047,
+        "wall_ms": 252.810975
+      },
+      "vlm_generate": {
+        "cuda_event_ms": 1364.0091552734375,
+        "generated_tokens": 20,
+        "prompt_tokens": 3086,
+        "sequence_tokens": 3106,
+        "wall_ms": 1364.044956
+      }
+    },
+    "whole_inference": {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1621.45703125,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "wall_ms": 1621.490783
+    }
+  },
+  "schema_version": 1,
+  "setup": {
+    "clip_load_decode_ms": 2808.074943,
+    "dataset_interface_ms": 974.090851,
+    "host_to_device": {
+      "baseline_allocated_mib": 21141.56884765625,
+      "baseline_reserved_mib": 21376.0,
+      "cuda_event_ms": 7.535615921020508,
+      "device_memory_after": {
+        "free_mib": 23696.75,
+        "total_mib": 45457.5625,
+        "used_mib": 21760.8125
+      },
+      "device_memory_before": {
+        "free_mib": 23764.75,
+        "total_mib": 45457.5625,
+        "used_mib": 21692.8125
+      },
+      "incremental_peak_allocated_mib": 68.0498046875,
+      "incremental_peak_reserved_mib": 68.0,
+      "peak_allocated_mib": 21209.61865234375,
+      "peak_reserved_mib": 21444.0,
+      "process_peak_rss_mib": 6242.625,
+      "wall_ms": 7.605827
+    },
+    "message_construction_ms": 0.389438,
+    "model_load": {
+      "device_memory_after": {
+        "free_mib": 23764.75,
+        "total_mib": 45457.5625,
+        "used_mib": 21692.8125
+      },
+      "device_memory_before": {
+        "free_mib": 45140.75,
+        "total_mib": 45457.5625,
+        "used_mib": 316.8125
+      },
+      "process_peak_rss_mib": 6242.625,
+      "torch_memory": {
+        "allocated_mib": 21141.56884765625,
+        "max_allocated_mib": 21141.56884765625,
+        "max_reserved_mib": 21376.0,
+        "reserved_mib": 21376.0
+      },
+      "wall_ms": 5304.864494
+    },
+    "processor_apply_chat_template_ms": 139.095792,
+    "processor_load_ms": 669.592723
+  },
+  "source": {
+    "benchmark_script_sha256": "861ff3d8a60c420681fd5eeb069a405d5159bf4dc4a6743fe84a3855937593b0",
+    "git": {
+      "branch": "main",
+      "head": "36aeb4c5938cbc2eb2aed33b22434773da4ab639",
+      "status_porcelain": ""
+    },
+    "official_test_sha256": "dc69646feed09f92defa00a19ae6f2fc2a37a10a70ec35678f87946fbe6fe8e8"
+  },
+  "started_at_utc": "2026-09-20T02:18:58.524740+00:00",
+  "steady_state_runs": [
+    {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1614.2618408203125,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "output": {
+        "cot": [
+          [
+            "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+          ]
+        ],
+        "minADE_m": 0.371870219707489,
+        "pred_rot_shape": [
+          1,
+          1,
+          1,
+          64,
+          3,
+          3
+        ],
+        "pred_xyz_shape": [
+          1,
+          1,
+          1,
+          64,
+          3
+        ]
+      },
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "run": 1,
+      "wall_ms": 1614.306811
+    },
+    {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1613.3096923828125,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "output": {
+        "cot": [
+          [
+            "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+          ]
+        ],
+        "minADE_m": 0.371870219707489,
+        "pred_rot_shape": [
+          1,
+          1,
+          1,
+          64,
+          3,
+          3
+        ],
+        "pred_xyz_shape": [
+          1,
+          1,
+          1,
+          64,
+          3
+        ]
+      },
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "run": 2,
+      "wall_ms": 1613.343223
+    },
+    {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1616.9495849609375,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "output": {
+        "cot": [
+          [
+            "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+          ]
+        ],
+        "minADE_m": 0.371870219707489,
+        "pred_rot_shape": [
+          1,
+          1,
+          1,
+          64,
+          3,
+          3
+        ],
+        "pred_xyz_shape": [
+          1,
+          1,
+          1,
+          64,
+          3
+        ]
+      },
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "run": 3,
+      "wall_ms": 1616.984057
+    },
+    {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1619.8563232421875,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "output": {
+        "cot": [
+          [
+            "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+          ]
+        ],
+        "minADE_m": 0.371870219707489,
+        "pred_rot_shape": [
+          1,
+          1,
+          1,
+          64,
+          3,
+          3
+        ],
+        "pred_xyz_shape": [
+          1,
+          1,
+          1,
+          64,
+          3
+        ]
+      },
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "run": 4,
+      "wall_ms": 1619.889662
+    },
+    {
+      "baseline_allocated_mib": 21218.126953125,
+      "baseline_reserved_mib": 22502.0,
+      "cuda_event_ms": 1613.8402099609375,
+      "device_memory_after": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "device_memory_before": {
+        "free_mib": 22536.75,
+        "total_mib": 45457.5625,
+        "used_mib": 22920.8125
+      },
+      "incremental_peak_allocated_mib": 908.0478515625,
+      "incremental_peak_reserved_mib": 0.0,
+      "output": {
+        "cot": [
+          [
+            "Nudge to the left to clear the construction equipment blocking the right side of our lane"
+          ]
+        ],
+        "minADE_m": 0.371870219707489,
+        "pred_rot_shape": [
+          1,
+          1,
+          1,
+          64,
+          3,
+          3
+        ],
+        "pred_xyz_shape": [
+          1,
+          1,
+          1,
+          64,
+          3
+        ]
+      },
+      "peak_allocated_mib": 22126.1748046875,
+      "peak_reserved_mib": 22502.0,
+      "process_peak_rss_mib": 6242.625,
+      "run": 5,
+      "wall_ms": 1613.873823
+    }
+  ],
+  "steady_state_summary": {
+    "cuda_event_ms": {
+      "max": 1619.8563232421875,
+      "mean": 1615.6435302734376,
+      "median": 1614.2618408203125,
+      "min": 1613.3096923828125,
+      "n": 5,
+      "p95": 1619.2749755859377,
+      "stdev": 2.741406237606854
+    },
+    "peak_allocated_mib": {
+      "max": 22126.1748046875,
+      "mean": 22126.1748046875,
+      "median": 22126.1748046875,
+      "min": 22126.1748046875,
+      "n": 5,
+      "p95": 22126.1748046875,
+      "stdev": 0.0
+    },
+    "peak_reserved_mib": {
+      "max": 22502.0,
+      "mean": 22502.0,
+      "median": 22502.0,
+      "min": 22502.0,
+      "n": 5,
+      "p95": 22502.0,
+      "stdev": 0.0
+    },
+    "reproducibility": {
+      "all_cot_identical": true,
+      "all_shapes_identical": true,
+      "minADE_max": 0.371870219707489,
+      "minADE_min": 0.371870219707489,
+      "minADE_span": 0.0
+    },
+    "wall_ms": {
+      "max": 1619.889662,
+      "mean": 1615.6795152,
+      "median": 1614.306811,
+      "min": 1613.343223,
+      "n": 5,
+      "p95": 1619.3085409999999,
+      "stdev": 2.73999396765381
+    }
+  },
+  "total_process_benchmark_ms": 45222.890554
+}

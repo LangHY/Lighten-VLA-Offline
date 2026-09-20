@@ -1,22 +1,23 @@
 # 智行·端析 / Alpamayo 1.5：当前进度
 
-更新时间：2026-09-19 22:49 CST。本文是**状态快照**；进行中的下载或构建须以完成后的退出码和验收记录更新，不能按“已完成”理解。
+更新时间：2026-09-20 10:58 CST。本文是**状态快照**；进行中的下载或构建须以完成后的退出码和验收记录更新，不能按“已完成”理解。
 
 ## 当前结论
 
-官方源码、10B checkpoint 文件、一个冻结测试 clip、已封装的 Cosmos/Qwen 非权重配置、独立离线兼容推理脚本及经禁网重建验证的 Linux/amd64 uv 依赖交付物已在本机准备；**尚未具备可确认的 L20 完全离线端到端推理结果**。最关键的未完成项是资产传输后复验与 L20 实机运行。没有进行剪枝、蒸馏、量化、ONNX 或 TensorRT 工作。
+官方源码、10B checkpoint、冻结测试 clip、Cosmos/Qwen 非权重配置和 Linux/amd64 uv 依赖已在 L20 完成加载与离线兼容推理。2026-09-20 的结构化证据证明 **L20 BF16 离线兼容性端到端基准已经跑通**；五次稳态运行平均 1615.68 ms，峰值 allocated 显存 22126 MiB，minADE 为 0.371870 m。当前仍未完成 NVIDIA 官方原始入口的独立验收；兼容基准不得命名为官方原始入口跑通。没有进行剪枝、蒸馏、量化、ONNX 或 TensorRT 工作。
 
 | 项目 | 当前状态 | 已有证据／边界 |
 | --- | --- | --- |
 | NVIDIA 官方源码 | 已核对 | `alpamayo1.5/` HEAD=`36aeb4c5938cbc2eb2aed33b22434773da4ab639`，工作树 clean；原始 `test_inference.py` SHA256=`dc69646feed09f92defa00a19ae6f2fc2a37a10a70ec35678f87946fbe6fe8e8`，未改动。 |
-| Alpamayo 1.5 10B 权重 | 文件已准备 | 本机 `models/` 含五个 safetensors 分片、`config.json` 和索引；此前已按冻结大小／SHA256 校验，本次复查五片与两份 JSON 仍在。**尚未在 L20 加载**，传输后需重验。 |
-| 一个测试 clip | 文件已验收 | `/Users/lang/Downloads/alp15-test-clip-delivery-20260917`：5 项 feature、4 项 metadata，冻结 `clip_id=030c760c-ae38-49aa-9ad8-f5650a545d26`、`t0_us=5100000`、`chunk_id=3119`；文件验收见 [ALP15-CLIP-ACCEPT-001.md](ALP15-CLIP-ACCEPT-001.md)。本机已在外联拦截下通过 `physical_ai_av==0.2.0` 读取 egomotion，**尚未完成四路视频与模型端到端测试**。 |
+| Alpamayo 1.5 10B 权重 | L20 加载成功 | 五个 safetensors 分片、`config.json` 和索引已在 L20 校验并以 BF16 完整加载；实测总参数量 11.0785B，参数存储约 20.64 GiB。 |
+| 一个测试 clip | L20 端到端使用成功 | 冻结 `clip_id=030c760c-ae38-49aa-9ad8-f5650a545d26`、`t0_us=5100000`、`chunk_id=3119`；四路摄像头各四帧成功进入模型，输入张量为 `(4, 4, 3, 1080, 1920)`。文件验收见 [ALP15-CLIP-ACCEPT-001.md](ALP15-CLIP-ACCEPT-001.md)。 |
 | 离线兼容推理代码 | 已实现、本机测试通过 | [脚本](../../scripts/test_alpamayo15_offline_compat.py)显式使用本地权重、clip、Cosmos/Qwen 配置，模型配置仅在内存中重映射，并阻止 Python socket 外联；项目 7 项本机测试通过。它不等于 NVIDIA 官方原始入口跑通，详见 [ALP15-OFFLINE-INFER-001.md](ALP15-OFFLINE-INFER-001.md)。 |
 | Qwen 处理器配置 | 九项已验收并封装 | 冻结 revision `89644892e4d85e24eaac8bacfd4f463576704203` 的九个非权重文件与 HF blob 身份已校验，并以真实文件写入配置交付物；全局缓存保留。 |
 | Cosmos 处理器／VLM 配置 | 九项已验收并封装 | ModelScope 传输的九个非权重文件已按大小与 Git blob SHA-1 匹配冻结 Hugging Face revision `a9fae2cf89dc64db96b12860417f0eb403013bb9`，且未发现权重；原 staging 已移入废纸篓。配置交付目录、归档与 SHA-256 见 [ALP15-CONFIG-DELIVERY-001.md](ALP15-CONFIG-DELIVERY-001.md)。**不需要 Cosmos 权重**。 |
-| Linux/amd64 uv 环境 | 本机依赖交付物已验收 | `/Users/lang/Downloads/alpamayo15-linux-amd64-uv-20260919` 包含 uv 0.12.15、CPython 3.12.14、uv cache 和验证 venv；另有约 3.76 GiB 的 `.tar.zst` 上传归档及 SHA256。在 CUDA 12.8.1 / Ubuntu 22.04 / amd64 的全新禁网容器中执行 `uv sync --frozen --offline` 退出码 0，安装 107 包；torch、flash-attn、Alpamayo 导入和修正运行时库路径后的 `ldd` 均通过。Mac 无 NVIDIA GPU，L20 CUDA 执行仍未验收。详见 [ALP15-UV-ENV-001.md](ALP15-UV-ENV-001.md)。 |
+| Linux/amd64 uv 环境 | L20 验证成功 | L20 实际环境为 Python 3.12.14、PyTorch 2.8.0+cu128、FlashAttention 2.8.3、Transformers 4.57.1、`physical-ai-av==0.2.0`；CUDA 可用且 BF16 支持。离线依赖构建记录见 [ALP15-UV-ENV-001.md](ALP15-UV-ENV-001.md)。 |
 | 上传归档 | 已生成并本机校验 | 源码、模型、单 clip、配置和 Linux/amd64 uv 环境五份归档均已生成；每份带相邻 SHA-256，并汇总到 `alpamayo15-upload-manifest-20260919.sha256`。详情见 [ALP15-UPLOAD-ARCHIVES-001.md](ALP15-UPLOAD-ARCHIVES-001.md)。 |
-| L20 官方／兼容推理 | 未执行 | L20 驱动、CUDA、依赖导入、官方入口阻塞记录、完整输出及资源观测均尚无实机验收证据。 |
+| L20 兼容推理 | 已跑通 | 五次稳态平均 1615.68 ms、P95 1619.31 ms、标准差 2.74 ms；CoC、形状和 minADE 五次一致。结构化结果见 [测试结果](../../results/baselines/l20-bf16/2026-09-20/README.md)，操作见 [运行手册](../runbooks/ALP15-L20-OFFLINE-COMPAT.md)。 |
+| NVIDIA 官方原始入口 | 未验收 | 当前成功入口是离线兼容脚本与自定义基准脚本；尚无官方原始入口的独立退出码、完整日志与结果记录。 |
 
 ## Linux/amd64 环境准备结果
 
@@ -26,7 +27,7 @@
 
 ## 下一步与验收门槛
 
-1. 向 L20 传输 `/Users/lang/Downloads` 下五份 `.tar.zst`、它们相邻的五份 `.sha256` 及总清单 `alpamayo15-upload-manifest-20260919.sha256`；在 L20 先执行总清单校验，再依据交付 README 断网重建 venv，并验证架构、驱动/CUDA、Python、核心导入与 `torch.cuda.is_available()`。
-2. 按 [AGENTS.md](../../AGENTS.md) 先记录 NVIDIA 官方原始入口在断网环境下的实际结果；若确有已记录的阻塞，再运行已批准的离线兼容入口。保存完整日志、退出码、输出形状、CoC、minADE、内存／显存与耗时，由 Sol 复核。**兼容入口成功不能命名为官方原始入口成功**。
+1. 从 L20 同步 `scripts/benchmark_alpamayo15_offline.py` 和完整控制台日志，核对记录的脚本 SHA-256=`861ff3d8a60c420681fd5eeb069a405d5159bf4dc4a6743fe84a3855937593b0`，并补齐独立退出码证据。
+2. 按 [AGENTS.md](../../AGENTS.md) 单独运行 NVIDIA 官方原始入口，保存实际命令、完整日志、退出码、输出和资源观测。若官方入口受阻，记录可复现阻塞；**不能用已经成功的兼容入口替代官方原始入口验收**。
 
 本文件不包含 token、密码、SSH 地址、GPU UUID 或带签名下载 URL；完整过程输出以当前任务工具调用记录及后续单独的构建日志为准。

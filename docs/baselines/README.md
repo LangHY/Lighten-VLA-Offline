@@ -1,6 +1,6 @@
 # 基线执行记录
 
-当前整体状态见 [ALP15-PROGRESS-20260917.md](ALP15-PROGRESS-20260917.md)；其中严格区分已验证资产、进行中的环境准备和未完成的 L20 实机门禁。
+当前整体状态见 [ALP15-PROGRESS-20260917.md](ALP15-PROGRESS-20260917.md)；其中严格区分已跑通的 L20 离线兼容基准与尚未验收的 NVIDIA 官方原始入口。
 
 ## L20 候选基线服务器只读盘点
 
@@ -52,3 +52,5 @@ Cosmos 九个非权重配置的 ModelScope 传输、冻结 Hugging Face blob 等
 Cosmos/Qwen 干净配置目录、上传归档、校验与中间文件清理记录见 [ALP15-CONFIG-DELIVERY-001.md](ALP15-CONFIG-DELIVERY-001.md)。
 
 五份 L20 上传归档、成员边界、SHA-256 和最终打包验收记录见 [ALP15-UPLOAD-ARCHIVES-001.md](ALP15-UPLOAD-ARCHIVES-001.md)。
+
+L20 日常预检、兼容推理、性能基准和证据留存步骤见 [ALP15-L20-OFFLINE-COMPAT.md](../runbooks/ALP15-L20-OFFLINE-COMPAT.md)；2026-09-20 BF16 结构化结果见 [测试结果](../../results/baselines/l20-bf16/2026-09-20/README.md)。
